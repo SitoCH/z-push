@@ -20,7 +20,6 @@ RUN sed -i "s/#ZPUSH_HOST#/$ZPUSH_URL/" /var/www/html/config.php
 RUN sed -i "s/#BACKEND_TYPE#/$BACKEND_TYPE/" /var/www/html/config.php
 RUN sed -i "s/#CALDAV_SERVER#/$CALDAV_SERVER/" /var/www/html/config.php
 
-COPY autodiscover/ /var/www/html/autodiscover/
 COPY config.php /var/www/html/config.php
 COPY default.vhost /etc/apache2/sites-enabled/000-default.conf
 
