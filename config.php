@@ -234,7 +234,7 @@ define('RETRY_AFTER_DELAY', 300);
         define('CALDAV_PROTOCOL', 'https');
         define('CALDAV_SERVER', $caldav_server);
         define('CALDAV_PORT', '443');
-        define('CALDAV_PATH', '/remote.php/dav/calendars/%u/'); //if nextcloud is installed in a subfolder
+        define('CALDAV_PATH', '/remote.php/dav/principals/users/SitoCH/'); //if nextcloud is installed in a subfolder
         define('CALDAV_PERSONAL', 'personal');
         define('CALDAV_SUPPORTS_SYNC', true);
         define('CALDAV_MAX_SYNC_PERIOD', 2147483647);
