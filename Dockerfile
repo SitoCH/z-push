@@ -4,10 +4,10 @@ ENV TERM xterm
 
 RUN apt-get update && apt-get install -y libawl-php git
 
-RUN cd /var/www/html && \
+RUN cd /var/www && \
 	git clone https://github.com/fmbiete/Z-Push-contrib.git && \
-	mv Z-Push-contrib z-push && \
-	mkdir /var/log/z-push \
+	mv Z-Push-contrib html && \
+	mkdir /var/log/z-push && \
 	chown www-data /var/lib/z-push && chown www-data /var/log/z-push
 
 COPY config.php /var/www/html/config.php
