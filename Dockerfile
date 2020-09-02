@@ -8,7 +8,7 @@ RUN cd /var/www && \
 	git clone https://github.com/fmbiete/Z-Push-contrib.git && \
 	mv Z-Push-contrib html && \
 	mkdir /var/log/z-push && \
-	chown www-data /var/lib/z-push && chown www-data /var/log/z-push
+	chown www-data /var/www/html && chown www-data /var/log/z-push
 
 COPY config.php /var/www/html/config.php
 COPY default.vhost /etc/apache2/sites-enabled/000-default.conf
