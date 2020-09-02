@@ -30,7 +30,7 @@ set_include_path(get_include_path() . PATH_SEPARATOR . $awlpath);
      *   false - use the username only.
      *   true  - string the mobile sends as username, e.g. full email address (default).
      */
-    define('USE_FULLEMAIL_FOR_LOGIN', true);
+    define('USE_FULLEMAIL_FOR_LOGIN', false);
 
 /**********************************************************************************
  * StateMachine setting
@@ -224,21 +224,16 @@ define('RETRY_AFTER_DELAY', 300);
  *  Backend settings
  */
     // The data providers that we are using (see configuration below)
-    define('BACKEND_PROVIDER', '#BACKEND_TYPE#');
+    define('BACKEND_PROVIDER', 'BackendCalDAV');
 
-    $zpush_url = '#ZPUSH_HOST#';
-    if($zpush_url != "zpush_default") define('ZPUSH_URL', 'https://'.$zpush_url.'/Microsoft-Server-ActiveSync');
-
-    $caldav_server = '#CALDAV_SERVER#';
-    if($caldav_server != "caldav_default") {
-        define('CALDAV_PROTOCOL', 'https');
-        define('CALDAV_SERVER', $caldav_server);
-        define('CALDAV_PORT', '443');
-        define('CALDAV_PATH', '/remote.php/dav/principals/users/SitoCH/'); //if nextcloud is installed in a subfolder
-        define('CALDAV_PERSONAL', 'personal');
-        define('CALDAV_SUPPORTS_SYNC', true);
-        define('CALDAV_MAX_SYNC_PERIOD', 2147483647);
-    }
+    define('CALDAV_PROTOCOL', 'https');
+    define('CALDAV_SERVER', 'nextcloud.grignola.ch');
+    define('CALDAV_PORT', '443');
+    define('CALDAV_PATH', '/remote.php/dav/calendars/%u/'); //if nextcloud is installed in a subfolder
+    define('CALDAV_PERSONAL', 'personal');
+    define('CALDAV_SUPPORTS_SYNC', true);
+    define('CALDAV_MAX_SYNC_PERIOD', 2147483647);
+    
 
 /**********************************************************************************
  *  Search provider settings
